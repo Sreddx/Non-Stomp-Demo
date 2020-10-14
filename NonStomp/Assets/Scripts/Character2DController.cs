@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Character2DController : MonoBehaviour
 {
-    public float MovementSpeed = 1;
-    public float JumpForce = 1;
+    public float MovementSpeed = 3;
+    public float JumpForce = 4;
     private Rigidbody2D _rigidbody;
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class Character2DController : MonoBehaviour
 
         if (!Mathf.Approximately(0, movement))
         {
-            transform.rotation = movement > 0 ? Quaternion.Euler(0, 100, 0) : Quaternion.identity;
+            transform.rotation = movement > 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
         }
         //Check jump input and generates jump
         if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y)<0.001f)
